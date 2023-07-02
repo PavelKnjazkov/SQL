@@ -52,6 +52,13 @@ SELECT COUNT(*) AS "В возрасте от 24 до 49" FROM staff WHERE post =
 SELECT post AS "Специальность", COUNT(*) AS "В возрасте от 24 до 49" FROM staff WHERE post = 'Рабочий' && age >= 24 && age <= 49; -- с выводом рабочего+кол-во РАБОТАЕТ
 SELECT post AS "Специальность", COUNT(*) AS "В возрасте от 24 до 49" FROM staff GROUP BY post && age >= 24 && age <= 49;  -- не работает что не так делаю? ХОТЕЛ ВСЕ специальности
 
+-- вот как!!!
+SELECT post AS "Специальность", COUNT(*) AS "В возрасте от 24 до 49"
+FROM staff
+WHERE age >= 24 && age <= 49
+GROUP BY post ;
+
+
 -- 5. Найдите количество специальностей
 SELECT COUNT(DISTINCT post) AS "Кол-во специальностей" FROM staff;
 
