@@ -30,7 +30,7 @@ END$$
 
 DELIMITER ;
 
-CALL move(7); -- Проверяем.
+CALL move(7); -- Выполняем проверку.
 
 
 
@@ -47,9 +47,9 @@ CREATE FUNCTION hello()
 BEGIN
 DECLARE result_text VARCHAR(25);
 SELECT CASE 
-	WHEN CURRENT_TIME >= '12:00:00' AND  CURRENT_TIME < '18:00:00' THEN 'Добрый день'
-	WHEN CURRENT_TIME >= '06:00:00' AND  CURRENT_TIME < '12:00:00' THEN 'Доброе утро'
-	WHEN CURRENT_TIME >= '00:00:00' AND  CURRENT_TIME < '06:00:00' THEN 'Доброй ночи'
+	WHEN CURRENT_TIME >= '12:00:00' AND  CURRENT_TIME < '18:00:00' THEN 'Добрый день!'
+	WHEN CURRENT_TIME >= '06:00:00' AND  CURRENT_TIME < '12:00:00' THEN 'Доброе утро!'
+	WHEN CURRENT_TIME >= '00:00:00' AND  CURRENT_TIME < '06:00:00' THEN 'Доброй ночи!'
 	ELSE 'Добрый вечер'
 END INTO result_text;
 RETURN result_text;
@@ -57,7 +57,7 @@ END$$
 
 DELIMITER ;
 
-SELECT hello(); -- Проверяем.
+SELECT hello(); -- Выполняем проверку.
 
 /* 
  3. (по желанию)* Создайте таблицу logs типа Archive. Пусть при каждом создании записи в таблицах users, 
